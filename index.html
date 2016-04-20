@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="pandoraNES">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<title>Pandora's NES</title>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700|Press+Start+2P' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="assets/libs/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/libs/animate.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/pandoranes.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/ngDialog.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/ngDialog-theme-default.css">
+</head>
+
+<body class="flexContainer">
+	<div data-ng-if="loading" class="loader">
+		<div class="loading text-center">
+			<h4 class="h4">Loading</h4>
+    		<img src="assets/graphics/bill-running.gif" alt="">
+    	</div>
+	</div>
+
+	<header id="header" class="header text-center">	
+		
+				<a class="" href="#/home"><img src="assets/graphics/nesbox-white.svg" class="img-responsive" alt=""></a>					   
+	
+	</header><!-- /header -->
+	
+	<div class="flexContent" ng-view>	
+		<!-- Views router -->
+	
+
+	</div>
+
+	<footer>
+		<nav>
+		  <div class="container">		   
+		      <ul class="navFooter">
+		        <li><a href="#/thelist"><img src="assets/graphics/mario.png" class="img-responsive" alt=""></a></li>
+		        <li><a href="#/themosaic"><img src="assets/graphics/higgins.png" class="img-responsive" alt=""></a></li>
+		        <li><a href="#/thequiz"><img src="assets/graphics/link.png" class="img-responsive" alt=""></a></li>
+		        <li><a href="#/thequiz"><img src="assets/graphics/vicviper.png" class="img-responsive" alt=""></a></li>
+		        <li class="pull-right"><p class="spaceRow"><small>&copy; Pandora's NES DB & Quiz</small></p></li>
+		      </ul>		  		   
+		  </div><!-- /.container-fluid -->
+		</nav>		
+	</footer>
+
+
+<!-- Libraries -->
+<script src="assets/js/vendor/angular/angular.js" type="text/javascript"></script>
+<script src="assets/js/vendor/angular/angular-route.min.js" type="text/javascript"></script>
+
+
+<!-- application base-->
+<script src="app/app.module.js"></script>
+<script src="app/app.routes.js"></script>
+
+<!-- pagination -->
+<script src="assets/js/vendor/dirPagination.js"></script>
+
+<!-- Modals -->	
+<script src="assets/js/vendor/ngDialog.min.js"></script>
+
+
+<!-- components -->
+<script src="app/components/utilitiesService/utilitiesService.js"></script>	
+
+<script src="app/components/home/homeController.js"></script>
+<script src="app/components/home/dashboardService.js"></script>
+
+<script src="app/components/mosaic/mosaicController.js"></script>		
+
+<script src="app/components/quiz/quizController.js"></script>	
+<script src="app/components/quiz/quizService.js"></script>	
+
+
+<script src="app/components/thelist/thelistController.js"></script>	
+<script src="app/components/thelist/thelistService.js"></script>	
+
+<script src="app/components/thegame/thegameController.js"></script>	
+<script src="app/components/thegame/thegameService.js"></script>	
+
+<script src="app/components/updategame/updategameController.js"></script>	
+<script src="app/components/updategame/updategameService.js"></script>	
+
+
+</body>
+
+
+</html>

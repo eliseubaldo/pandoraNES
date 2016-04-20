@@ -1,0 +1,91 @@
+<div class="container">
+<div class="row spaceRow">
+	<div class="col-md-12"><a href="#/update/{{gameid}}" class="pull-right btn btn-primary">Update</a></div>
+</div>
+
+<div class="row">
+
+	<div class="col-md-6 col-sm-6">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="panel panel-default">
+				  <div class="panel-heading">Box Art</div>
+				  <div class="panel-body">
+					<img ng-src="{{boxldpath + thegame.boxfull}}" alt="{{thegame.title}}" class="img-responsive" ng-click="clickToOpen()">
+				  </div>
+				</div>
+			</div>
+
+			<div class="col-md-4">
+				<div class="panel panel-default">
+				  <div class="panel-heading">Screenshot</div>
+				  <div class="panel-body">
+					<img ng-src="{{thumbpath + thegame.thumb}}" alt="{{thegame.title}}">
+				  </div>
+				</div>
+			</div>
+
+		</div>
+		
+		
+		
+	</div>
+
+	<div class="col-md-6 col-sm-6">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+				  <div class="panel-heading">Title</div>
+				  <div class="panel-body">
+				    {{thegame.title}}
+				  </div>
+				</div>				
+			</div>
+			<div class="col-md-12">
+				<div class="panel panel-default">
+					<div class="panel-heading">Release date</div>
+				  <div class="panel-body">
+				  	{{thegame.release}}
+				  </div>
+				</div>				
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">Publisher</div>
+		  <div class="panel-body">
+		  	{{thegame.publisher}}
+		  </div>
+		</div>
+		
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6 col-sm-6">
+		<div class="panel panel-default">
+			<div class="panel-heading">Genre</div>
+		  <div class="panel-body">
+			{{thegame.genre}}
+		  </div>
+		</div>		
+	</div>
+
+	<div class="col-md-6 col-sm-6">
+		<div class="panel panel-default">
+			<div class="panel-heading"># Players</div>
+		  <div class="panel-body">
+				{{thegame.players}}
+		  </div>
+		</div>
+
+	</div>
+
+</div>
+
+</div>

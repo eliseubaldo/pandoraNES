@@ -1,0 +1,143 @@
+<div class="container">
+	
+	<div class="gameOver" ng-show="gameOver">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h4 class="hGameOver c-red text-center">GAME OVER</h4>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-6">
+
+					<p class="spaceRow c-red text-center"><strong>Final Score: {{score}}</strong></p>
+
+					
+					<form name="scoresForm" class="" novalidate ng-submit="addScore(newhighScore)" class="scoresForm" ng-hide="submited">
+					<div class="form-group">
+						<label for="name" class="c-red">Enter you name</label>
+						<input type="text" ng-model="newhighScore.name" class="form-control scoreName" size="10" placeholder="name">
+					</div>
+					<div class="form-group">
+						<button type="submit"  class="btn btn-primary">Submit my score</button>
+					</div>
+					</form>
+
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<p class="spaceRow c-red"><strong>Score Ranking</strong></p>
+					<table class="table tableRanking">
+						<thead>
+							<tr>
+								<th>Rank</th>
+								<th>Name</th>
+								<th>Score</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="score in highScores | orderBy:'-score'">
+								<td>{{$index+1}}</td>
+								<td>{{score.name}}</td>
+								<td>{{score.score}}</td>
+							</tr>							
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center playAgain">
+					<h4 class="c-red">Play again ?</h4>
+					<button class="btn btn-primary" ng-click="startQuiz()">Yes</button>
+					<a href="#/home" class="btn btn-primary">No</a>
+				</div>
+			</div>
+		</div>		
+	</div>
+
+	<div class="row spaceRow" ng-show="playing">
+		<div class="col-md-12 c-red">
+			<h3 class="c-red text-center">NES Quiz</h3>
+		</div>
+	</div>
+
+	<div class="row spaceRow" ng-hide="playing">
+		<div class="col-md-6 c-red">
+			<h3 class="c-red text-center">NES Quiz</h3>
+
+			<p>Test your NES knowledge on this Quiz.</p>
+			<p>You have 3 lives and each wrong question you lose 1 life.</p>
+			<p>Every right question you earn 1 point, and if you answer 3 in a row, you get 3 bonus points!</p>
+			<p class="text-center"><button type="" class="btn btn-primary" ng-click="startQuiz(); startButton=true;" ng-show="!startButton">Start!</button></p>
+		</div>
+		<div class="col-md-6">
+			<p class="spaceRow c-red"><strong>Quiz Ranking</strong></p>
+					<table class="table tableRanking">
+						<thead>
+							<tr>
+								<th>Rank</th>
+								<th>Name</th>
+								<th>Score</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="score in highScores | orderBy:'-score'">
+								<td>{{$index+1}}</td>
+								<td>{{score.name}}</td>
+								<td>{{score.score}}</td>
+							</tr>							
+						</tbody>
+					</table>
+		</div>	
+		
+	</div>
+
+	<div class="row" ng-show="rndGameThumb">
+		<div class="col-xs-6">
+			<div class="text-left c-red quizBar">Life<div class="quizLife animated" ng-class="{'slideInUp':quizAnsResult=='Wrong!'}">{{tries}}</div></div>
+		</div>
+		<div class="col-xs-6">			
+			<div class="text-right c-red quizBar">Score<div class="quizScore animated" ng-class="{'slideInDown':quizAnsResult=='Right!'}">{{score}}</div></div>
+		</div>
+	</div>
+	
+
+	<div class="row" ng-show="rndGameThumb">
+		<div class="col-md-12 text-center">
+			<div class="rndGameThumb animated" ng-class="{'slideInLeft':newQuestion}">
+				<h4 class="c-red text-center h4">What game is this ?</h4>
+				<img ng-src="{{thumbpath + rndGameThumb}}" class="quizImg" alt="What game?">
+			</div>
+		</div>
+	</div>
+
+	<div class="row" ng-show="!gameOver">
+		<div class="col-sm-12">
+			<div class="quizAnsResult animated text-center" ng-class="{'shake':quizAnsResult=='Wrong!', 'tada':quizAnsResult=='Right!'}" ng-show="quizAnsResult">{{quizAnsResult}}</div>
+
+			<div class="inaRow animated" ng-class="{'slideInUp':bonusPoints}" ng-show="bonusPoints">
+				<img src="assets/graphics/ani_dk_dk.gif" class="spaceRow" alt="">
+				<p>3 Right questions in a row!</p>
+				<p>+3 points!</p>
+			</div>
+
+			<ul class="quizAnswers animated" ng-class="{'slideInUp':newQuestion}">
+				<li ng-repeat="answer in answers" class="c-red">
+					<div class="row">
+						<div class="col-xs-12 text-center">
+							<span class="btn quiz-index">{{$index+1}}</span>
+							<button class="btn btn-quiz" ng-click="checkQuestion(answer.answer)" ng-disabled="verifying">{{answer.answer}}</button>
+						</div>						
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+
+	
+
+
+</div>
+
+</div>

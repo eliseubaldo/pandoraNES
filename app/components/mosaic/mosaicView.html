@@ -1,0 +1,11 @@
+<div class="mosaicItems">
+
+	<div class="mosaicTile {{rndColor()}}"  ng-repeat="game in themosaic | limitTo:20 ">
+		<div style="clear:both;"><img ng-src="{{boxldpath + game.boxfull}}" alt="{{game.title}}"></div>
+		<p>{{game.title}}</p>
+	</div>
+	
+
+</div>
+
+

@@ -1,0 +1,106 @@
+<div class="container">
+
+<div class="row spaceRow">
+	<div class="col-md-12"><h3 class="c-red">Update</h3></div>
+</div>
+
+
+<form name="thegameForm" novalidate ng-submit="updateGame(thegame)">
+
+
+<div class="row">
+
+	<div class="col-md-6">
+		<div class="panel panel-default">
+		  <div class="panel-body">
+		  	<p><strong>Game picture</strong></p>
+			<img ng-src="{{thumbpath + thegame.thumb}}" alt="{{thegame.title}}">
+		  </div>
+		</div>
+		
+		
+	</div>
+
+	<div class="col-md-6">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="panel panel-default">
+				  <div class="panel-body">
+				  	<div class="update-block form-group">
+					    <label for="gameTitle">Game title</label>
+					    <input type="text" id="gameTitle" class="form-control" ng-model="thegame.title">
+				    </div>
+
+				    
+				    
+				  </div>
+				</div>				
+			</div>
+			<div class="col-md-12">
+				<div class="panel panel-default">
+				  <div class="panel-body">
+				  	<div class="update-block form-group">
+					    <label for="gameTitle">Release date</label>
+					    <input type="text" id="gameTitle" class="form-control" ng-model="thegame.release">
+				    </div>
+				  	
+				  </div>
+				</div>				
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+		  <div class="panel-body">
+		  	<div class="update-block form-group">
+			    <label for="gameTitle">Game Publisher</label>
+			    <input type="text" id="gameTitle" class="form-control" ng-model="thegame.publisher">
+		    </div>
+		  	
+		  </div>
+		</div>
+		
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="panel panel-default">
+		  <div class="panel-body">
+		  	<div class="update-block form-group">
+			    <label for="gameTitle">Genre</label>
+			    <input type="text" id="gameTitle" class="form-control" ng-model="thegame.genre">
+		    </div>
+			
+		  </div>
+		</div>		
+	</div>
+
+	<div class="col-md-6">
+		<div class="panel panel-default">
+		  <div class="panel-body">
+		  	<div class="update-block form-group">
+			    <label for="gameTitle">Number of Players</label>
+			    <input type="text" id="gameTitle" class="form-control" ng-model="thegame.players">
+		    </div>
+				
+		  </div>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="row spaceRow">
+	<div class="col-md-12">
+		<input type="submit" class="btn btn-primary pull-right" value="Update">
+		<a href="#/thelist" title="" class="btn btn-primary">Cancel</a>
+	</div>
+</div>
+</form>
+
+</div>
